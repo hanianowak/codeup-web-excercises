@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+
+<form method="GET" action="/login">
+
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" >
+    <br>
+
+    <label for="about">About</label>
+    <input type="textarea" id="about" name="about" >
+    <br>
+
+
+    <select name="coffee_preference">
+        <option value="light">Light Roast</option>
+        <option value="dark">Dark Roast</option>
+        <option value="espresso">Espresso Blend</option>
+    </select>
+
+    <br>
+
+
+    <label for="color">Select your favorite color:</label>
+        <input type="color" id="color" name="favcolor">
+
+
+    <br>
+
+
+    <label for="date">When is ypur birthday?</label>
+        <input type="date" id="date" name="bday">
+    <br>
+
+    <label for="number">Whats your fav number?</label>
+        <input id = "number" type="number" name="number">
+    <br>
+
+    <label for="month">when is your birthday</label>
+    <input type="month" id="month" name="month">
+    <br>
+
+    <label for="range">How do you like our classes?</label>
+    <input type="range" id="range" name="range" min="0" max="10">
+    <br>
+
+    <label for="search">Search</label>
+    <input type="search" id="search" name="search">
+    <br>
+
+    <label for="tel">put your phone nr</label>
+    <input type="tel" id="tel" name="tel">
+    <br>
+
+    <label for="time">arrival time</label>
+    <input type="time" id="time" name="time">
+    <br>
+
+    <label for="url">your website</label>
+    <input type="url" id="url" name="website">
+    <br>
+
+    <label for="week">Reserve a week for your vacation</label>
+    <input type="week" id="week" name="week">
+    <br>
+
+    <label for="mood">how are you today</label>
+    <br>
+    <input type="radio" id="mood" name="mood" value="great"> Great<br>
+    <input type="radio" id="mood" name="mood" value="fine"> fine<br>
+    <input type="radio" id="mood" name="mood" value="dont ask"> Don't ask
+    <br>
+
+
+    <button>Submit</button>
+
+</form>
+
+</body>
+</html>
