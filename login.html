@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+<!--2. Make a file named login.html-->
+<!-- - Add the following inputs:-->
+<!-- - username, make it required, ensure the cursor is inside this input on page load-->
+<!-- - email, make it required-->
+<!-- - password, make it required-->
+<!-- - add a checkbox that says "Keep me logged in for 2 weeks" and load the page with the checkbox checked-->
+<!-- - Make sure that the text on the submit button says "Login"-->
+    <form method="GET" action="/login">
+        <label for="name">Username</label>
+        <input type="text" id="name" name="name" required autofocus>
+        <br>
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        <br>
+        <label for="password">password: </label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <br>
+        <input name="keep_logged" value="true" type="checkbox" checked>Keep me logged in for 2 weeks<br>
+
+        <button>Login</button>
+    </form>
+</body>
+</html>

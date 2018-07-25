@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>checkout</title>
+</head>
+<body>
+<!--4. Make a file named checkout.html-->
+<!-- - This will be a form for a credit card checkout-->
+<!-- - Make all fields required except for the checkbox-->
+<!-- - Add an input for credit card number, expiration month/year, security code-->
+<!-- - Add inputs for billing address-->
+<!-- - Add a checkbox that says "Keep this credit card on file for future transactions"-->
+<!-- - The submit button's text should say "Buy Now!"-->
+    <form method="GET" action="/submit">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" required>
+        <br>
+        <label for="expirationDay">Expiration Day</label>
+        <input type="month" id="expirationDay" required>
+        <br>
+        <label for="securityCode">CVV</label>
+        <input type="number" id="securityCode" required>
+        <br>
+        <p>Billing address:</p>
+        <label for="street">Street address</label>
+        <input type="text" id="street" name="street" required>
+        <br>
+        <label for="zipCode">Zip code</label>
+        <input type="text" id="zipCode" name="zip" required>
+        <br>
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" required>
+        <br>
+        <input name="keep" value="true" type="checkbox">Keep this credit card on file for future transactions<br>
+
+        <button>Buy now!</button>
+    </form>
+</body>
+</html>

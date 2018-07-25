@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>search</title>
+</head>
+<body>
+<!--3. Make a file named property-search.html-->
+<!-- - This will be a form for a property search.-->
+<!-- - Add all the appropriate inputs you would need to conduct a property search:-->
+<!-- - Property type, square footage, min_price, max_price, zipcode, # of bedrooms, # of bathrooms, etc...-->
+<!-- - The submit button's text should say "Search now"-->
+    <h2>what are your looking for?</h2>
+    <form>
+        <label for="propertyType">Property type</label><br>
+        <input id="propertyType" type="radio" name="apartament" value="apartament">apartament <br>
+        <input id="propertyType" type="radio" name="house" value="house">house<br>
+        <input id="propertyType" type="radio" name="combo" value="combo">combo<br>
+        <input id="propertyType" type="radio" name="mobile" value="mobile">mobile<br>
+        <br>
+
+        <label for="squareFT">Square footage</label>
+        <input id="squareFT" type="range" name="squareFT" min="20" max="3500">
+        <br>
+
+        <label for="minPrice">MIN price</label>
+        <input id="minPrice" type="number" id="minPrice">
+
+        <label for="maxPrice">MAX price</label>
+        <input id="maxPrice" type="number" id="maxPrice">
+        <br>
+
+        <label for="zipCode">ZIP Code</label>
+        <input id="zipCode" type="text" id="zipCode">
+        <br>
+
+        <label for="bedrooms">Bedrooms</label>
+        <select name="Bedrooms" id="bedrooms">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4+">4+</option>
+        </select>
+        <br>
+
+        <label for="bathrooms">Bedrooms</label>
+        <select name="Bathrooms" id="bathrooms">
+            <option value="1">1</option>
+            <option value="1.5">1.5</option>
+            <option value="2">2</option>
+            <option value="2.5+">2.5+</option>
+        </select>
+        <br>
+        <button>Search now!</button>
+    </form>
+
+</body>
+</html>
