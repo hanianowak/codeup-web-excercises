@@ -1,12 +1,12 @@
 body {
-    --bg-info: lightblue;
-    --text-info: blue;
-    --bg-success: lightgreen;
-    --text-success: green;
-    --bg-warning: lightyellow;
-    --text-warning: olive;
-    --bg-error: lightpink;
-    --text-error: darkred;
+    --bg-info: #cedffe;
+    --text-info: #5453a5;
+    --bg-success: #d0f2db;
+    --text-success: #4a9166;
+    --bg-warning: #fcfacb;
+    --text-warning: #8e7b26;
+    --bg-error: #f9d3d7;
+    --text-error: #b56979;
 }
 
 body, html {
