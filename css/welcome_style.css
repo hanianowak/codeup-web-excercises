@@ -1,0 +1,66 @@
+h1 {
+    text-align: center;
+}
+
+h1, h2 {
+    color:darkblue;
+    text-decoration: underline;
+}
+
+h2 {
+    font-family: "Arial Black";
+}
+
+body {
+    background-color: lightyellow;
+    background-image: url("https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    font-style: initial;
+}
+
+ul {
+    list-style-type: square;
+}
+
+ul, ol {
+    font-family: "Arial Black";
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+table.product {
+    width: 500px; height: 250px;
+    background-color: peachpuff;
+    border-collapse: separate;
+}
+
+td.lower {
+    font-size: larger;
+    text-indent: 20px;
+}
+
+a:link {
+    color: darkred;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a:active {
+    color: blue;
+}
+
+tr.upper {
+    font-size: large;
+    background-color: darksalmon;
+}
+
+#beginning {
+    font-size: x-large ;
+}
