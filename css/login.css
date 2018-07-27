@@ -24,6 +24,7 @@ fieldset {
     /* There must be 1em between the content and the border of this element */
     padding: 1em;
     /* It should have no border */
+    border: none;
     /* Its background should be white */
     background-color: white;
 }
@@ -50,18 +51,14 @@ fieldset {
 
 .form-control {
     /* There must be 4px on top of the text and below the text of an input with this class */
-    /*padding-top: 4px;*/
-    /*padding-bottom: 4px;*/
+    padding-top: 4px;*/
+    padding-bottom: 4px;*/
     /* It should have a separation of .5em from elements on top of it and below it */
-    /*margin-bottom: calc(0.5em - 8px);*/
-    /*margin-top: 0.5em;*/
+    margin: .5em 0;
     /* You'll need to use the `calc` function to make the width of this element match the width of the button */
     /* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
     /* HINT: Calculate based on the padding of the `.btn` class */
     /*width: 100%;*/
-
-    margin: 4px 0;
-    padding: 0.5em 0;
     width: calc(100% - 4px);
 
 }
@@ -76,9 +73,6 @@ fieldset {
     border: 1px;
     border-color: lightgray;
     background-color: #0fb784;
-
-    /*?*/
-    margin-top: 1em;
 }
 
 .btn-block {
