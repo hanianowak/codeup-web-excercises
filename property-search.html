@@ -11,7 +11,7 @@
 <!-- - Property type, square footage, min_price, max_price, zipcode, # of bedrooms, # of bathrooms, etc...-->
 <!-- - The submit button's text should say "Search now"-->
     <h2>what are your looking for?</h2>
-    <form>
+    <form action="https://request-inspector.glitch.me">
         <label for="propertyType">Property type</label><br>
         <input id="propertyType" type="radio" name="apartament" value="apartament">apartament <br>
         <input id="propertyType" type="radio" name="house" value="house">house<br>
@@ -19,9 +19,17 @@
         <input id="propertyType" type="radio" name="mobile" value="mobile">mobile<br>
         <br>
 
-        <label for="squareFT">Square footage</label>
-        <input id="squareFT" type="range" name="squareFT" min="20" max="3500">
+        <!--<label for="squareFT">Square footage</label>-->
+        <!--<input id="squareFT" type="range" name="squareFT" min="20" max="3500">-->
+        <!--<br>-->
+
+        <label for="minFT">MIN square footage</label>
+        <input id="minFT" type="number" id="minFT">
+
+        <label for="maxFT">MAX square footage</label>
+        <input id="maxFT" type="number" id="maxFT">
         <br>
+
 
         <label for="minPrice">MIN price</label>
         <input id="minPrice" type="number" id="minPrice">
