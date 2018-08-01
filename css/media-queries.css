@@ -5,8 +5,8 @@ body {
 
 
 .alert-info, h1, .nav-links{
-        text-align: center;
-    }
+    text-align: center;
+}
 
 h1 {
     margin-bottom: 0;
@@ -142,7 +142,7 @@ img {
     }
 
     .rights {
-       float: left;
+        float: left;
     }
 
     .links {
