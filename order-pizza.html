@@ -2,30 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Order</title>
+    <title>Pizza World</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
-
-<!--<table class="table table-striped">-->
-    <!--<tr>-->
-        <!--<th>Firstname</th>-->
-        <!--<th>Lastname</th>-->
-        <!--<th>Age</th>-->
-    <!--</tr>-->
-    <!--<tr>-->
-        <!--<td>Jill</td>-->
-        <!--<td>Smith</td>-->
-        <!--<td>50</td>-->
-    <!--</tr>-->
-    <!--<tr>-->
-        <!--<td>Eve</td>-->
-        <!--<td>Jackson</td>-->
-        <!--<td>94</td>-->
-    <!--</tr>-->
-<!--</table>-->
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Pizza world</a>
@@ -58,21 +40,19 @@
 
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search stores near you</button>
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search stores near you</button>
         </form>
-
-            <button class="btn btn-outline-link my-2 my-sm-0" type="submit"> <img src="img/profile.png"> Sign up</button>
-
         </ul>
+            <button class="btn btn-outline-link my-2 my-sm-0 text-right" type="submit"> <img src="img/profile.png"> Sign up</button>
+
     </div>
 </nav>
 
 <div class="container">
 
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
+    <div class="jumbotron jumbotron-fluid d-none-sm">
+        <div class="container" id="jumbo">
             <h1 class="display-4">Welcome to Pizza World</h1>
-            <!--<img src="img/pizza.png">-->
         </div>
     </div>
 
@@ -244,7 +224,7 @@
 
             <div class="card border-secondary mb-3" style="max-width: 100%;">
                 <div class="card-header">Choose Non-Meats</div>
-            <!--<div class="card-body text-secondary">-->
+                <div class="card-body text-secondary">
             <ul class="list-group">
                 <li class="list-group-item">
                     <div class="form-check">
@@ -279,7 +259,8 @@
                     </div>
                 </li>
             </ul>
-            <!--</div>-->
+            </div>
+        </div>
         </div>
 
             <div class="card-footer bg-transparent border-secondary text-right">
