@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Pizza World</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Pizza world</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -24,61 +28,64 @@
                 <a class="nav-link" href="#">Menu</a>
             </li>
             <!--<li class="nav-item dropdown">-->
-                <!--<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-                    <!--Dropdown-->
-                <!--</a>-->
-                <!--<div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-                    <!--<a class="dropdown-item" href="#">Action</a>-->
-                    <!--<a class="dropdown-item" href="#">Another action</a>-->
-                    <!--<div class="dropdown-divider"></div>-->
-                    <!--<a class="dropdown-item" href="#">Something else here</a>-->
-                <!--</div>-->
+            <!--<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+            <!--Dropdown-->
+            <!--</a>-->
+            <!--<div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+            <!--<a class="dropdown-item" href="#">Action</a>-->
+            <!--<a class="dropdown-item" href="#">Another action</a>-->
+            <!--<div class="dropdown-divider"></div>-->
+            a<!--<a class="dropdown-item" href="#">Something else here</a>-->
+            <!--</div>-->
             <!--</li>-->
             <!--<li class="nav-item">-->
-                <!--<a class="nav-link disabled" href="#">Disabled</a>-->
+            <!--<a class="nav-link disabled" href="#">Disabled</a>-->
             <!--</li>-->
 
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
-            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search stores near you</button>
-        </form>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
+                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search stores near you</button>
+            </form>
         </ul>
-            <button class="btn btn-outline-link my-2 my-sm-0 text-right" type="submit"> <img src="img/profile.png"> Sign up</button>
+        <button class="btn btn-outline-link my-2 my-sm-0 text-right" type="submit"><img src="img/profile.png"> Sign up
+        </button>
 
     </div>
 </nav>
 
 <div class="container">
 
-    <div class="jumbotron jumbotron-fluid d-none-sm">
+    <div class="jumbotron jumbotron-fluid d-none d-md-block">
         <div class="container" id="jumbo">
             <h1 class="display-4">Welcome to Pizza World</h1>
         </div>
     </div>
 
     <h2>Build your own pizza!</h2>
+
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link active" href="#">Size and crust</a>
+            <a class="nav-link active" href="#"><span class="badge badge-pill badge-secondary">1</span> Size and
+                crust</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Cheese and Sauce</a>
+            <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">2</span> Cheese and Sauce</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Toppings</a>
+            <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>
         </li>
     </ul>
 
     <!--size and crust-->
     <div class="card border-secondary mb-3" style="max-width: 100%;">
-        <div class="card-header bg-primary border-secondary">Choose size and crust</div>
+        <div class="card-header bg-info">Choose size and crust</div>
         <div class="card-body text-secondary">
             <div class="card border-secondary mb-3" style="max-width: 100%;">
                 <div class="card-header">Hand Tossed</div>
                 <div class="card-body text-secondary">
                     <h5 class="card-title">Garlic seasoned crust with a rich, buttery taste.</h5>
                     <ul class="list-group">
-                        <li class="list-group-item">
+                        <li class="list-group-item bg-info">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                                 <label class="form-check-label" for="defaultCheck1">
@@ -86,10 +93,10 @@
                                 </label>
                             </div>
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item bg-info">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                <label class="form-check-label" for="defaultCheck2">
                                     Medium (12")
                                 </label>
                             </div>
@@ -102,18 +109,18 @@
                 <div class="card-body text-secondary">
                     <h5 class="card-title">Thin enough for optimum crispy to crunchy ratio.</h5>
                     <ul class="list-group">
-                        <li class="list-group-item">
+                        <li class="list-group-item bg-info">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                                <label class="form-check-label" for="defaultCheck3">
                                     Medium (12")
                                 </label>
                             </div>
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item bg-info">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+                                <label class="form-check-label" for="defaultCheck4">
                                     Large (14")
                                 </label>
                             </div>
@@ -129,11 +136,11 @@
 
     <!--cheese and sauce-->
     <div class="card border-secondary mb-3" style="max-width: 100%;">
-        <div class="card-header bg-primary border-secondary">Choose Cheese and Sauce</div>
+        <div class="card-header alert alert-info">Choose Cheese and Sauce</div>
         <div class="card-body text-secondary">
             <div class="card border-secondary mb-3" style="max-width: 100%;">
                 <div class="card-header">Cheese</div>
-                <div class="card-body text-secondary">
+                <div class="card-body alert alert-info text-secondary">
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">How much?</label>
                         <select class="form-control" id="exampleFormControlSelect1">
@@ -147,10 +154,10 @@
             </div>
             <div class="card border-secondary mb-3" style="max-width: 100%;">
                 <div class="card-header">Sauce</div>
-                <div class="card-body text-secondary">
+                <div class="card-body alert alert-info text-secondary">
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">What type?</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <label for="exampleFormControlSelect2">What type?</label>
+                        <select class="form-control" id="exampleFormControlSelect2">
                             <option>Tomato sauce</option>
                             <option>Marinara sauce</option>
                             <option>BBQ Sauce</option>
@@ -159,10 +166,10 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">How much?</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect3">
                             <option>Light</option>
                             <option>Normal</option>
-                            <option>Extrae</option>
+                            <option>Extra</option>
                         </select>
                     </div>
 
@@ -179,93 +186,93 @@
 
     <!--toppings-->
     <div class="card border-secondary mb-3" style="max-width: 100%;">
-        <div class="card-header bg-primary border-secondary">Choose Toppings</div>
+        <div class="card-header bg-info border-secondary">Choose Toppings</div>
         <div class="card-body text-secondary">
             <div class="card border-secondary mb-3" style="max-width: 100%;">
                 <div class="card-header">Choose Meats</div>
 
                 <!--<div class="card-body text-secondary">-->
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                    Beef
-                                </label>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                    Ham
-                                </label>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                    Philly Steak
-                                </label>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                    Bacon
-                                </label>
-                            </div>
-                        </li>
-                    </ul>
+                <ul class="list-group">
+                    <li class="list-group-item bg-info">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+                            <label class="form-check-label" for="defaultCheck5">
+                                Beef
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item bg-info">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
+                            <label class="form-check-label" for="defaultCheck6">
+                                Ham
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item bg-info">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck7">
+                            <label class="form-check-label" for="defaultCheck7">
+                                Philly Steak
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item bg-info">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck8">
+                            <label class="form-check-label" for="defaultCheck1">
+                                Bacon
+                            </label>
+                        </div>
+                    </li>
+                </ul>
                 <!--</div>-->
             </div>
 
             <div class="card border-secondary mb-3" style="max-width: 100%;">
                 <div class="card-header">Choose Non-Meats</div>
-                <div class="card-body text-secondary">
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                           Green Peppers
-                        </label>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                            Mushrooms
-                        </label>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                            Onions
-                        </label>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                            Jalapeno Peppers
-                        </label>
-                    </div>
-                </li>
-            </ul>
+                <!--<div class="card-body text-secondary">-->
+                <ul class="list-group">
+                    <li class="list-group-item bg-info">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
+                            <label class="form-check-label" for="defaultCheck9">
+                                Green Peppers
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item bg-info">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck10">
+                            <label class="form-check-label" for="defaultCheck10">
+                                Mushrooms
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item bg-info">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck11">
+                            <label class="form-check-label" for="defaultCheck11">
+                                Onions
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list-group-item bg-info">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck12">
+                            <label class="form-check-label" for="defaultCheck12">
+                                Jalapeno Peppers
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+                <!--</div>-->
             </div>
-        </div>
         </div>
 
-            <div class="card-footer bg-transparent border-secondary text-right">
-                <a href="#" class="btn btn-primary"> <img src="img/cart.png" alt=""> Checkout ></a>
-            </div>
+        <div class="card-footer bg-transparent border-secondary text-right">
+            <a href="#" class="btn btn-primary"> <img src="img/cart.png" alt=""> Checkout ></a>
+        </div>
     </div>
 
 </div>
