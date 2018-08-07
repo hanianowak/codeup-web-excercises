@@ -1,5 +1,5 @@
 .jumbotron {
-    background-image: url("http://java.codeup.com/examples/bootstrap/pizza.png");
+    background-image: url("../img/pizza.png");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -10,12 +10,6 @@ h1 {
     opacity: .7;
     width: 100%;
 }
-
-/*.navbar {*/
-    /*max-width: 90%;*/
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
-/*}*/
 
 #jumbo {
     padding: 0;
