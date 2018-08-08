@@ -71,7 +71,7 @@
 
 
     // Use the following code to follow the instructions below:
-    var username = 'codeup';
+    var username = 'codeup ';
     var password = 'notastrongpassword';
 
     // Create a variable that holds a boolean value for each of the following conditions:
@@ -81,15 +81,15 @@
     console.log("The passwort is at least 5 characters: " + passwordLength);
 
     // the password must not include the username
-    var conflictNames = username !== password;
-    console.log("The password does not include the username: " + conflictNames);
+    var conflict = password.indexOf('codeup') == -1;
+    console.log("The password does not include the username: " + conflict);
 
     // the username must be no more than 20 characters
     var usernameLength = username.length <= 20;
     console.log("The username isn't longer than 20 characters: " + usernameLength);
 
     // neither the username or password can start or end with whitespace
-    var whitespace = (username.indexOf(" ") !== 0) && (username.indexOf(" ") !== (username.length + 1)) && (password.indexOf(" ") !== 0) && (password.indexOf(" ") !== (password.length + 1));
+    var whitespace = (username.indexOf(" ") !== 0) && (username.indexOf(" ") !== (username.length - 1)) && (password.indexOf(" ") !== 0) && (password.indexOf(" ") !== (password.length - 1));
 
     console.log("The username and password don't start or end with whitespace " + whitespace);
 
