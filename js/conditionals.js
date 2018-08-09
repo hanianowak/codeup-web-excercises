@@ -16,95 +16,75 @@
  * Can you refactor your code to use functions?
  */
 
-// var enter = confirm("would you like to enter a number?");
-//
-// if (enter === true) {
-//     var num = prompt("type a number");
-//     var plus100 = parseFloat(num) + 100;
-//     var positive = parseFloat(num) > 0;
-//
-//
-//     if (parseFloat(num) % 2 === 0) {
-//         alert("your number is even!");
-//     }
-//
-//     else {
-//         alert("your number is odd!");
-//     }
-//
-//     alert("your number plus 100 is " + plus100(num));
+var enter = confirm("would you like to enter a number?");
 
 
 
+if (enter === true) {
+    var num = prompt("type a number");
 
-    //     alert("your number plus 100 is " + plus100);
-    //
-    //     if (positive === true) {
-    //         alert("your number is positive!");
-    //     }
-    //     else {
-    //         alert("your number is negative!");
-    //     }
-    //
-    // }
-    //
-    //
-    //     alert("your number plus 100 is " + plus100);
-    //
-    //     if (positive === true) {
-    //         alert("your number is positive!");
-    //     }
-    //     else {
-    //         alert("your number is negative!");
-    //     }
-    // }
-// }
-
-// else {
-//     alert("That's okay, you don't have to.");
-// }
-
-
-
-/* ########################################################################## */
-
-/**
- * TODO:
- * Create a function named `analyzeColor` that accepts a string that is a color
- * name as input. This function should return a message that related to that
- * color. Only worry about the colors defined above, if the color passed is not
- * one of the ones defined above, return a message that says so
- *
- * Example:
- *  > analyzeColor('blue') // returns "blue is the color of the sky"
- *  > analyzeColor('red') // returns "Strawberries are red"
- *  > analyzeColor('cyan') // returns "I don't know anything about cyan"
- *
- * You should use an if-else-if-else block to return different messages.
- *
- * Test your function by passing various string literals to it and
- * console.logging the function's return value
- */
-
-
-function analizeColor (color) {
-
-    if (color === "blue"){
-        console.log("the sky is blue");
+    if (parseFloat(num) % 2 === 0) {
+        alert("your number is even!");
     }
-    else if (color === "red") {
-        console.log("fire is red");
-    }
-    else if (color === "pink") {
-        console.log("lollipops are pink");
-    }
+
     else {
-        console.log("I don't know anything about this color");
+        alert("your number is odd!");
     }
 }
 
-console.log(analizeColor("yellow"));
+var plus100 = parseFloat(num) + 100;
+    alert("Your number plus 100 is " + plus100);
 
+var positive = parseFloat(num) > 0;
+
+if (positive === true) {
+    alert("your number is positive!");
+}
+else {
+    alert("your number is negative!");
+}
+
+
+
+
+    /* ########################################################################## */
+
+    /**
+     * TODO:
+     * Create a function named `analyzeColor` that accepts a string that is a color
+     * name as input. This function should return a message that related to that
+     * color. Only worry about the colors defined above, if the color passed is not
+     * one of the ones defined above, return a message that says so
+     *
+     * Example:
+     *  > analyzeColor('blue') // returns "blue is the color of the sky"
+     *  > analyzeColor('red') // returns "Strawberries are red"
+     *  > analyzeColor('cyan') // returns "I don't know anything about cyan"
+     *
+     * You should use an if-else-if-else block to return different messages.
+     *
+     * Test your function by passing various string literals to it and
+     * console.logging the function's return value
+     */
+
+
+    // function analizeColor(color) {
+    //
+    //     if (color === "blue") {
+    //         console.log("the sky is blue");
+    //     }
+    //     else if (color === "red") {
+    //         console.log("fire is red");
+    //     }
+    //     else if (color === "pink") {
+    //         console.log("lollipops are pink");
+    //     }
+    //     else {
+    //         console.log("I don't know anything about this color");
+    //     }
+    // }
+    //
+    // console.log(analizeColor("yellow"));
 
 
 // Don't change the next two lines!
@@ -112,38 +92,40 @@ console.log(analizeColor("yellow"));
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color everytime the page loads)
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-var randomColor = colors[Math.floor(Math.random() * colors.length)];
-/**
- * TODO:
- * Pass the `randomColor` variable to your function and console.log the results.
- * You should see a different message everytime you refresh the page
- */
-console.log(analizeColor(randomColor));
-/**
- * TODO:
- * Refactor your above function to use a switch-case statement
- */
-
-function analizeColor (color) {
-    switch (color) {
-        case "blue":
-            console.log("the sky is blue");
-            break;
-
-        case "red":
-            console.log("fire is red");
-            break;
-
-        case "pink":
-            console.log("lollipops are pink");
-            break;
-
-        default:
-            console.log("I don't know anything about this color");
-    }
-}
-console.log(analizeColor("pink"));
+//     var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+//     var randomColor = colors[Math.floor(Math.random() * colors.length)];
+//     /**
+//      * TODO:
+//      * Pass the `randomColor` variable to your function and console.log the results.
+//      * You should see a different message everytime you refresh the page
+//      */
+//     console.log(analizeColor(randomColor));
+//
+//     /**
+//      * TODO:
+//      * Refactor your above function to use a switch-case statement
+//      */
+//
+//     function analizeColor2(color) {
+//         switch (color) {
+//             case "blue":
+//                 console.log("the sky is blue");
+//                 break;
+//
+//             case "red":
+//                 console.log("fire is red");
+//                 break;
+//
+//             case "pink":
+//                 console.log("lollipops are pink");
+//                 break;
+//
+//             default:
+//                 console.log("I don't know anything about this color");
+//         }
+//     }
+//
+//     console.log(analizeColor2("pink"));
 
 /**
  * TODO:
@@ -174,6 +156,34 @@ console.log(analizeColor("pink"));
  * return value.
  */
 
+function calculateTotal(luckyNumber, total) {
+
+
+    if (luckyNumber === 0) {
+        return total;
+    }
+    else if (luckyNumber === 1) {
+        return (total - (total * 0.1));
+    }
+    else if (luckyNumber === 2) {
+        return (total - (total * 0.25));
+    }
+    else if (luckyNumber === 3) {
+        return (total - (total * 0.35));
+    }
+    else if (luckyNumber === 4) {
+        return (total - (total * 0.5));
+    }
+    else {
+        return (total - total);
+    }
+}
+
+console.log("yur total is: $" + calculateTotal(2, 100));
+
+
+
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -182,4 +192,11 @@ console.log(analizeColor("pink"));
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+
+var luckyNumber = Math.floor(Math.random() * 6);
+
+var yourBill = prompt("What's your total?");
+alert("Your lucky number is: " + luckyNumber);
+alert("Your price before discount is: " + yourBill);
+alert("your total after discount is: " + calculateTotal(luckyNumber, yourBill));
+
