@@ -3,6 +3,12 @@
 
 "use strict";
 
+
+
+
+
+
+
 // var age = 30;
 // var message = "Happy birthday! You are " + ++age + " years old!";
 // alert(message);
@@ -47,18 +53,18 @@
 //888888888888
 
 
-
-var myName = prompt("Whats your name?");
-
-var birthday = function (name) {
-    var message = "happy birthday, " + name;
-    console.log(message);
-}
-
-birthday(myName);
-
-var myDog = prompt("What's your dog's name?");
-birthday(myDog);
-birthday("Hania");
-birthday();
+//
+// var myName = prompt("Whats your name?");
+//
+// var birthday = function (name) {
+//     var message = "happy birthday, " + name;
+//     console.log(message);
+// }
+//
+// birthday(myName);
+//
+// var myDog = prompt("What's your dog's name?");
+// birthday(myDog);
+// birthday("Hania");
+// birthday();
 

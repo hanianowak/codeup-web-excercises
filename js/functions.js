@@ -1,5 +1,12 @@
 "use strict";
 
+function addSeven(number) {
+    return parseFloat(number) + 7;
+}
+
+var number = 3;
+console.log("Our number plus 7 is " + addSeven(number));
+
 /**
  * TODO:
  * Create a function called 'sayHello' that takes a parameter 'name'.
@@ -27,6 +34,7 @@ console.log(sayHello(name));
 
 
 var helloMessage = sayHello("Hania");
+console.log(helloMessage);
 
 
 
@@ -39,7 +47,7 @@ var helloMessage = sayHello("Hania");
  */
 
 var myName = "Hania";
-sayHello(myName);
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -64,7 +72,8 @@ var random = Math.floor((Math.random() * 3) + 1);
  */
 
 function isTwo (number) {
-    return number == 2;
+    return number === 2;
+    // var is2 = (number == 2);
 }
 
 var number = 4;
