@@ -1,3 +1,5 @@
+
+
 console.log("Hello from external JS");
 
 alert("Welcome to my Website!");
@@ -13,6 +15,8 @@ var littleMermaidDays = prompt("For how many you want to keep Little Mermaid?");
 var brotherBearDays = prompt("For how many you want to keep Brother Bear?");
 var herculesDays = prompt("For how many you want to keep Hercules?");
 var pricePerMovie = 3;
+
+console.log(typeof littleMermaidDays);
 
 var littleMermaidTotal = littleMermaidDays * pricePerMovie;
 var brotherBearTotal = brotherBearDays * pricePerMovie;

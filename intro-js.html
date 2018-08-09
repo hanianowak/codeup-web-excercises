@@ -56,6 +56,8 @@
 
     var enrollment = classNotFull == true && noConflict == true;
 
+    //var enrollment = classNotFull && noConflict;
+
     console.log("Student can be enrolled: " + enrollment);
 
 
@@ -65,7 +67,7 @@
     var notExpired = true;
     var premium = true;
 
-    var offerApplied = (items2 && notExpired) || premium
+    var offerApplied = (items2 || premium) && notExpired;
 
     console.log("Offer can be applied: " + offerApplied);
 
@@ -81,7 +83,7 @@
     console.log("The passwort is at least 5 characters: " + passwordLength);
 
     // the password must not include the username
-    var conflict = password.indexOf('codeup') == -1;
+    var conflict = password.includes(username);
     console.log("The password does not include the username: " + conflict);
 
     // the username must be no more than 20 characters
@@ -90,6 +92,7 @@
 
     // neither the username or password can start or end with whitespace
     var whitespace = (username.indexOf(" ") !== 0) && (username.indexOf(" ") !== (username.length - 1)) && (password.indexOf(" ") !== 0) && (password.indexOf(" ") !== (password.length - 1));
+    // var whitespace = user.trim() != username;
 
     console.log("The username and password don't start or end with whitespace " + whitespace);
 
