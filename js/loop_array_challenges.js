@@ -1,7 +1,5 @@
 // Loop and Array challenges
 //
-
-
 // Make a function called randomIntBetween(min, max) that returns a random number between the min and the max.
 
 function randomIntBetween(min, max) {
@@ -30,6 +28,7 @@ console.log(rollDie());
 
 
 // Make a function called twoDice() that returns the sum of rolling two six sided dice.
+
 function twoDice() {
     var first = Math.floor(Math.random() * (5)) + 1;
     var second = Math.floor(Math.random() * (5)) + 1;
@@ -37,41 +36,79 @@ function twoDice() {
 }
 console.log("sum: " + twoDice());
 
+
+
 // Make a function called twentySidedDie() that returns a random integer between 1 and 20.
+
+function twentySidedDie() {
+    return Math.floor(Math.random() * (19)) + 1;
+}
+console.log(twentySidedDie());
 
 
 
 // Make a function called twelveSidedDie() that returns a random integer between 1 and 12.
 
+function twelveSidedDie() {
+    return Math.floor(Math.random() * (11)) + 1;
+}
+console.log(twelveSidedDie());
+
 
 
 // Make a function called tetrahedron() that returns a random integer between 1 and 4.
 
-
-//
+function tetrahedron() {
+    return Math.floor(Math.random() * (3)) + 1;
+}
+console.log(tetrahedron());
 
 
 
 // Use what you know about functions, loops, and arrays to complete the following:
 //
-//     Make a function called listOfRolls(num) that takes in a number containing how many 6-sided dice rolls you want to make. The listOfRolls function should return an array of that length, where each element of the array is the result of the rollDie function.
+//Make a function called listOfRolls(num) that takes in a number containing how many 6-sided dice rolls you want to make.
+//The listOfRolls function should return an array of that length, where each element of the array is the result of the rollDie function.
 //
+function listOfRolls(num) {
+    var rolls = [];
+    for(var i=1; i<=num; i++) {
+        var roll = rollDie();
+        rolls.push(roll);
+    }
+    return rolls;
+}
+console.log(listOfRolls(5));
+
+
 
 //
-// Make a function called
-// listOfRollsFromDieFunc(numberOfRoles, diceFunction) that takes in two arguments:
+//Make a function called listOfRollsFromDieFunc(numberOfRoles, diceFunction) that takes in two arguments:
 //     The first argument is the number of rolls you want to make.
 //     The second argument is a function that contains the function definition for the type of die you want to roll.
-//     For example, if we call listOfDieRollsFromDieFunc(1, tetrahedron), then the function will return an array containing one value that is the result of calling the tetrahedron function.
+//For example, if we call listOfDieRollsFromDieFunc(1, tetrahedron), then the function will return an array containing one value that is the result of calling the tetrahedron function.
 
 
 
 
 // Make an array containing 20 random numbers between 1 and 6.
-//
+
+function makeArray() {
+    var randoms = [];
+    for(var i=1; i<=20; i++) {
+        var item = rollDie();
+        randoms.push(item);
+    }
+    return randoms;
+}
+console.log("20 random numbers: " + makeArray());
+
 //
 // Make a forEach that only outputs the even numbers
 //
+
+
+
 // Make a forEach that adds 10 to each number
 //
 // Make a forEach that gets the average of all the numbers
@@ -88,7 +125,8 @@ console.log("sum: " + twoDice());
 
 // Challenge #1:
 //
-// Define a function named allIndexesOf that takes in two arguments. The first argument should be the array to search and the second argument should be the value you want to search for. If the item does not exist in the provided array, return an empty array;
+// Define a function named allIndexesOf that takes in two arguments. The first argument should be the array to search and the second argument should be the value
+// you want to search for. If the item does not exist in the provided array, return an empty array;
 //
 // Given:
 var fruits = ["apple", "banana", "orange", "apple", "pineapple"];
@@ -98,17 +136,6 @@ var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "re
 // allIndexesOf(fruits, "pineapple") should return [4]
 //
 //
-// var allIndexesOf = function (fruits, searchFruit) {
-//     var indexes = [], i = -1;
-//     while ((i = fruits.indexOf(searchFruit, i+1)) != -1){
-//         indexes.push(i);
-//     }
-//   return indexes;
-// }
-// console.log(allIndexesOf(fruits, "apple"));
-// console.log(allIndexesOf(fruits, "guava"));
-// console.log(allIndexesOf(fruits, "pineapple"));
-
 function allIndexesOf(array, value) {
     var indexes = [];
     for(var i = 0; i < array.length; i++) {
@@ -153,7 +180,8 @@ console.log(removeAll(bugs, "roach"));
 
 
 //Challenge #0
-//define a function named countOccurrances(array, item) that takes in two arguments. 1 - the array you want to search, 2 - the value you wish to count. if there no occurrances - return 0.
+//define a function named countOccurrances(array, item) that takes in two arguments. 1 - the array you want to search,
+// 2 - the value you wish to count. if there no occurrances - return 0.
 
 var fruits2 = ["apple", "banana", "orange", "apple", "pineapple"];
 var bugs2 = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
