@@ -205,3 +205,18 @@ while (count < 10) {
 for (var count = 0; count < 10; count++) {
     console.log(count);
 }
+
+
+//pushup
+
+// function lengthOfTheLongestWord(sentence) {
+//     var longest = 0;
+//
+//     var wordsArray = sentence.split(" ");
+//     for (var i=0; i<wordsArray.length; i++){
+//         if (wordsArray[i].length > longest) {
+//             longest = wordsArray[i].length;
+//         }
+//     }
+//     return longest;
+// }
