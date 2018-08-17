@@ -195,16 +195,17 @@ console.log(books);
         console.log("author: " + books[i].author.firstName + " " + books[i].author.lastName);
     }
 
+    //or
+
 
     books.forEach(function(book, index) {
-        console.log("IDL: " + (index + 1));
+        console.log("Book #: " + (index + 1));
         console.log("Title: " + book.title);
         console.log("author: " + book.author.firstName + " " + book.author.lastName);
+        console.log("------------------")
     });
 
-
-
-
+    
 
 
     /**
