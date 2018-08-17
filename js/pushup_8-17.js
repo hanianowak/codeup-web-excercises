@@ -7,7 +7,7 @@ function returnMAxRepetitions(word) {
         repetitions = 1;
         var letters = word.split("");
         for (var j = 0; j < word.length; j++) {
-            if (i != j && (letters[i] === letters[j])) {
+            if (i != j && (letters[i].toLocaleLowerCase() === letters[j].toLocaleLowerCase())) {
                 repetitions++;
             }
         }
@@ -18,6 +18,6 @@ function returnMAxRepetitions(word) {
     return mostRepetitions;
 }
 
-console.log(returnMAxRepetitions("oooooorrrr"));
+console.log(returnMAxRepetitions("Oooooorrrr"));
 console.log(returnMAxRepetitions("ooeekkddooooo"));
 console.log(returnMAxRepetitions("Mississippi"));
