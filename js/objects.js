@@ -233,6 +233,8 @@ console.log(books);
 
     console.log(createBook("odkrywanie ameryki", "max","kolonko"));
 
+
+
     var books2 = [
         createBook("title1", "firstName1", "lastName1"),
         createBook("title2", "firstName2", "lastName2"),
@@ -243,11 +245,14 @@ console.log(books);
     ];
 
 
+
+
+    
+
     function showBookInfo(book, index) {
-        console.log("IDL: " + (index + 1));
+        console.log("#: " + (index + 1));
         console.log("Title: " + book.title);
         console.log("author: " + book.author.firstName + " " + book.author.lastName);
-
     }
     books2.forEach(function(bookxd, index) {
         showBookInfo(bookxd, index);
