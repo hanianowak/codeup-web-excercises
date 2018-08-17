@@ -51,12 +51,31 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    shoppers.forEach(function(shopper) {
+        var total;
+        var discount = 0;
+
+        if(shopper.amount > 200) {
+            discount = shopper.amount * .12;
+            total = shopper.amount - discount;
+        } else {
+            total = shopper.amount;
+        }
+
+        console.log(
+            "The shopper " + shopper.name + " purchased " +
+            "$" + shopper.amount + " of goods." +
+            " and received a discount of " +
+            "$" + discount + " and their final total is: " + total)
+    });
+
+
     //
     //
     // var discount = shoppers[i].amount * .12;
@@ -89,27 +108,6 @@
 
 
 
-
-
-// function discount(amount, name) {
-// amount = shoppers.amount;
-// name = shoppers.name;
-//     for (var i=0; i <= shoppers.length; i++) {
-//         if (amount > 200) {
-//             console.log(name + " your amount before discount was " + amount + ", after is " + (amount - amount * .12));
-//         } else {
-//             console.log(name + " your amount before discount was " + amount + ", after is " + amount);
-//         }
-//     }
-//
-// }
-// console.log(discount());
-
-
-
-
-
-
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -124,31 +122,36 @@
      */
     var books = [
         {
-            title: "Gringo wśród dzikich plemion", author: {
+            title: "Gringo wśród dzikich plemion",
+            author: {
                 firstName: "Wojciech",
                 lastName: "Cejrowski"
             }
         },
         {
-            title: "The Salmon of Doubt", author: {
+            title: "The Salmon of Doubt",
+            author: {
                 firstName: "Douglas",
                 lastName: "Adams"
             }
         },
         {
-            title: "Rising '44: The Battle for Warsaw", author: {
+            title: "Rising '44: The Battle for Warsaw",
+            author: {
                 firstName: "Norman",
                 lastName: "Davies"
             }
         },
         {
-            title: "Bóg w wilekim mieście", author: {
+            title: "Bóg w wilekim mieście",
+            author: {
                 firstName: "Katarzyna",
                 lastName: "Olubińska"
             }
         },
         {
-            title: "Jeep. Moja wielka przygoda", author: {
+            title: "Jeep. Moja wielka przygoda",
+            author: {
                 firstName: "Tony",
                 lastName: "Halik"
             }
@@ -184,11 +187,20 @@ console.log(books);
 
 
 
+
+
     for (var i=0; i< books.length; i++) {
         console.log("Book # " + (i+1));
         console.log("Title: " + books[i].title);
         console.log("author: " + books[i].author.firstName + " " + books[i].author.lastName);
     }
+
+
+    books.forEach(function(book, index) {
+        console.log("IDL: " + (index + 1));
+        console.log("Title: " + book.title);
+        console.log("author: " + book.author.firstName + " " + book.author.lastName);
+    });
 
 
 
@@ -208,7 +220,37 @@ console.log(books);
      *   `showBookInfo` function.
      *
 **/
-    function createBook (title, autor) {
+    function createBook (title, first, last) {
+
+        return {
+            'title': title,
+            'author': {
+                'firstName': first,
+                'lastName': last
+            }
+        };
+    }
+
+    console.log(createBook("odkrywanie ameryki", "max","kolonko"));
+
+    var books2 = [
+        createBook("title1", "firstName1", "lastName1"),
+        createBook("title2", "firstName2", "lastName2"),
+        createBook("title3", "firstName3", "lastName3"),
+        createBook("title1", "firstName4", "lastName4"),
+        createBook("title1", "firstName5", "lastName5")
+
+    ];
+
+
+    function showBookInfo(book, index) {
+        console.log("IDL: " + (index + 1));
+        console.log("Title: " + book.title);
+        console.log("author: " + book.author.firstName + " " + book.author.lastName);
 
     }
+    books2.forEach(function(bookxd, index) {
+        showBookInfo(bookxd, index);
+    });
+    
 })();
