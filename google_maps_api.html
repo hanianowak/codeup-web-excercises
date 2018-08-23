@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>maps</title>
     <style type="text/css">
         #map-canvas {
             width: 770px;
@@ -17,7 +18,7 @@
 
 <!-- Script to show address on map -->
 <script type="text/javascript">
-    (function() {
+    (function () {
         "use strict";
 
         // Set our map options
@@ -27,8 +28,8 @@
 
             // This sets the center of the map at our location
             center: {
-                lat:  54.350943,
-                lng:  18.649528
+                lat: 54.350943,
+                lng: 18.649528
             }
         };
 
@@ -37,15 +38,30 @@
         var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
 
-
-
         var icon = {
             url: 'img/burrito4.png'
         };
 
+        var restaurants = {
+            pueblo: {lat: 54.350943, lng: 18.649528},
+            taiGrill: {lat: 29.135342, lng: -98.145926},
+            turquoiseGrill: {lat: 29.492557, lng: -98.555335}
+
+        };
+        
+
+        //     var marker = new google.maps.Marker({
+        // restaurants.forEach(function () {
+        //         position: restaurants.position,
+        //         map: map,
+        //         animation: google.maps.Animation.DROP
+        //         // icon: icon
+        //     });
+        // }) ;
+
 
         // Create lat and long for our marker position
-        var pueblo = { lat: 54.350943, lng: 18.649528 };
+        var pueblo = {lat: 54.350943, lng: 18.649528};
 
         // Add the marker to our existing map
         var marker = new google.maps.Marker({
@@ -56,25 +72,20 @@
         });
 
 
-
-        
-
         // Create a new infoWindow object with content
         var infowindow = new google.maps.InfoWindow({
             content: "<h3>PUEBLO</h3>" +
-                     "<h4>Mexican Food!</h4>" +
-                        "<ul><li>chiimichangas</li><li>burritos</li></ul>"
+                "<h4>Mexican Food!</h4>" +
+                "<ul><li>chimichangas</li><li>burritos</li><li>margaritas!</li></ul>"
 
         });
 
         // Open the window using our map and marker
         // infowindow.open(map, marker);
 
-        marker.addListener('click', function() {
+        marker.addListener('click', function () {
             infowindow.open(map, marker);
         });
-
-
 
 
     })();
