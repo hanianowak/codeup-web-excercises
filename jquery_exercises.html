@@ -47,15 +47,25 @@
 
     // exc2
     // $('.codeup').css('border', '1px solid red');
-    $('li').css('fontSize', '20px');
+    // $('li').css('fontSize', '20px');
     // $('li').css('background-color', '#FFFF00');
     // $('p').css('background-color', '#FFFF00');
     // $('h1').css('background-color', '#FFFF00');
 
-    alert($('h1').html());
+    // alert($('h1').html());
 
     // exc3
-    $('h1, li, p').css('background-color', '#FFFF00');
+    // $('h1, li, p').css('background-color', '#FFFF00');
+
+    $('h1').click(function() {
+        $('h1').css('background-color', 'salmon')
+    });
+
+    $('p').dblclick(function(e) {
+        $('p').css('font-size', '18px')
+    });
+
+
 
 </script>
 </body>
