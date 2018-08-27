@@ -18,18 +18,18 @@
 
 <!-- Script to show address on map -->
 <script type="text/javascript">
+    "use strict";
     (function () {
-        "use strict";
 
         // Set our map options
         var mapOptions = {
             // Set the zoom level
-            zoom: 18,
+            zoom: 12,
 
             // This sets the center of the map at our location
             center: {
-                lat: 54.350943,
-                lng: 18.649528
+                lat: 29.4885026,
+                lng: -98.5222287
             }
         };
 
@@ -42,50 +42,83 @@
             url: 'img/burrito4.png'
         };
 
-        var restaurants = {
-            pueblo: {lat: 54.350943, lng: 18.649528},
-            taiGrill: {lat: 29.135342, lng: -98.145926},
-            turquoiseGrill: {lat: 29.492557, lng: -98.555335}
+        var restaurants = [
+            {
+                name: 'Sumo Japanese Steakhouse',
+                position: {lat: 29.518563, lng: -98.555274}
+            },
+            {name: 'The Cove', position: {lat: 29.440912, lng: -98.500103}},
+            {name: 'Turquoise Grill', position: {lat: 29.492557, lng: -98.555335}}
+        ];
 
-        };
-        
 
-        //     var marker = new google.maps.Marker({
-        // restaurants.forEach(function () {
-        //         position: restaurants.position,
-        //         map: map,
-        //         animation: google.maps.Animation.DROP
-        //         // icon: icon
-        //     });
-        // }) ;
+
+        // var marker2 = new google.maps.Marker({
+        //     position: restaurants[0].position,
+        //     map: map,
+        //     animation: google.maps.Animation.DROP,
+        //     icon: icon
+        // });
+        //
+        // var marker3 = new google.maps.Marker({
+        //     position: restaurants[1].position,
+        //     map: map,
+        //     animation: google.maps.Animation.DROP,
+        //     icon: icon
+        // });
+
+        restaurants.forEach(function (restaurant) {
+            var marker = new google.maps.Marker({
+                position: restaurant.position,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: icon
+            });
+
+            var infowindow = new google.maps.InfoWindow({
+                content: "<h3>" + restaurant.name + "</h3>" +
+                    "<h4>Mexican Food!</h4>" +
+                    "<ul><li>chimichangas</li><li>burritos</li><li>margaritas!</li></ul>"
+            });
+
+            // Open the window using our map and marker
+            // infowindow.open(map, marker);
+
+            marker.addListener('click', function () {
+                infowindow.open(map, marker);
+            });
+
+        });
+
+
 
 
         // Create lat and long for our marker position
-        var pueblo = {lat: 54.350943, lng: 18.649528};
-
-        // Add the marker to our existing map
-        var marker = new google.maps.Marker({
-            position: pueblo,
-            map: map,
-            animation: google.maps.Animation.DROP,
-            icon: icon
-        });
+        // var pueblo = {lat: 54.350943, lng: 18.649528};
+        //
+        // // Add the marker to our existing map
+        // var marker = new google.maps.Marker({
+        //     position: pueblo,
+        //     map: map,
+        //     animation: google.maps.Animation.DROP,
+        //     icon: icon
+        // });
 
 
         // Create a new infoWindow object with content
-        var infowindow = new google.maps.InfoWindow({
-            content: "<h3>PUEBLO</h3>" +
-                "<h4>Mexican Food!</h4>" +
-                "<ul><li>chimichangas</li><li>burritos</li><li>margaritas!</li></ul>"
-
-        });
-
-        // Open the window using our map and marker
-        // infowindow.open(map, marker);
-
-        marker.addListener('click', function () {
-            infowindow.open(map, marker);
-        });
+        // var infowindow = new google.maps.InfoWindow({
+        //     content: "<h3>PUEBLO</h3>" +
+        //         "<h4>Mexican Food!</h4>" +
+        //         "<ul><li>chimichangas</li><li>burritos</li><li>margaritas!</li></ul>"
+        //
+        // });
+        //
+        // // Open the window using our map and marker
+        // // infowindow.open(map, marker);
+        //
+        // marker.addListener('click', function () {
+        //     infowindow.open(map, marker);
+        // });
 
 
     })();
