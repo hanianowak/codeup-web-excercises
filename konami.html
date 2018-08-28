@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+    <style>
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #8378b3;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Konami Code!</h1>
+<div>
+    <img src="img/flowers.jpeg">
+</div>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+    $(document).keyup(function (event) {
+        console.log(event.keyCode);
+    });
+
+
+    function konami(fn) {
+        var input = "";
+        var pattern = "3838404037393739666513";
+        $(document).keydown(function (e) {
+            input += e.keyCode;
+            if (input.indexOf(pattern) !== -1) {
+                fn();
+                input = "";
+            }
+        });
+    }
+
+
+    $(document).ready(function () {
+        konami(function () {
+            alert("All flowers are dead!!");
+            $("body").css("background-color", "pink");
+
+            $("h1").css("font-size", "200px").animate({
+                opacity: '0.3'
+            });
+
+            $("img").fadeOut(3000);
+        });
+    });
+
+    // ↑ ↑ ↓ ↓ ← → ← → b a enter
+</script>
+</body>
+</html>

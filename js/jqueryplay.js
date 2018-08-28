@@ -3,7 +3,7 @@ $(function () {
     // document.getElementById("#btn1").addEventListener("click", function () {
     //     alert("you cliced the btn1")
     // }) ;
-    
+
 
     $("#btn1").on("click", function () {
         $('#panel1').slideUp(1000);
@@ -21,16 +21,16 @@ $(function () {
             width: '150px'
         });
     });
-    
+
 
     $("#btn3").mouseover(function () {
         // $("#panel3").toggleClass("highlighted");
-        $("#panel1").show(1000);
+        $("#panel1").css("background-color", "pink").show(1000);
         $("#panel2").hide(1000);
-        $("#panel3").show(1000);
+        $("#panel3").css("background-color", "pink").show(1000);
         $("#panel4").hide(1000);
     });
-    
+
 
     $("#btn4").on("click", function () {
         $("#panel1").css("font-weight", "bold").slideUp(2000).slideDown(5000);
@@ -38,5 +38,5 @@ $(function () {
         $("#panel3").css("font-weight", "bold").slideUp(2000).slideDown(5000);
         $("#panel4").css("font-weight", "bold").slideUp(2000).slideDown(5000);
     });
-    
+
 });
