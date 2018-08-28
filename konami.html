@@ -13,13 +13,15 @@
             color: #8378b3;
             text-align: center;
         }
+
         #burrito {
             display: none;
             width: 10%;
             position: absolute;
             top: 700px;
         }
-        div{
+
+        div {
             text-align: center;
         }
     </style>
@@ -65,22 +67,26 @@
 
             $("h1").css("font-size", "200px").animate({
                 opacity: '0.3'
-            },3000);
+            }, 3000);
 
             $("#flowers").fadeOut(2000);
 
-            $(document).ready(function() {
+            $(document).ready(function () {
                 $("#burrito").show();
-                // $("#burrito").animate({left: "+=500"}, 2000);
-                // $("#burrito").animate({left: "-=500"}, 1000);
+
+                $("#burrito").mouseover(function () {
+                    $("#burrito").fadeOut();
+                });
+
                 $("#burrito").animate({left: "+=500"}, 2000);
                 $("#burrito").animate({left: "-=1000"}, 1500);
             });
+
             $("#burrito").fadeOut(5000);
 
         });
     });
-    
+
 
     // ↑ ↑ ↓ ↓ ← → ← → b a enter
 </script>
