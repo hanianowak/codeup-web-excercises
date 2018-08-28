@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Konami Code</title>
+    <title>Catch a bee!</title>
     <style>
-        img {
+        #flowers {
             width: 100%;
             border-radius: 10px;
         }
@@ -12,29 +13,40 @@
             color: #8378b3;
             text-align: center;
         }
+        #burrito {
+            display: none;
+            width: 10%;
+            position: absolute;
+            top: 700px;
+        }
+        div{
+            text-align: center;
+        }
     </style>
 </head>
+
 <body>
-<h1>Konami Code!</h1>
+<h1>Catch a bee!!!</h1>
 <div>
-    <img src="img/flowers.jpeg">
+    <img src="img/flowers.jpeg" id="flowers">
+    <img src="img/bee1.png" id="burrito">
 </div>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
 
-    $(document).keyup(function (event) {
-        console.log(event.keyCode);
-    });
+    // $(document).keyup(function (event) {
+    //     console.log(event.keyCode);
+    // });
 
 
     function konami(fn) {
         var input = "";
-        var pattern = "3838404037393739666513";
-        $(document).keydown(function (e) {
-            input += e.keyCode;
-            if (input.indexOf(pattern) !== -1) {
+        var konamiCode = "3838404037393739666513";
+        $(document).keydown(function (event) {
+            input += event.keyCode;
+            if (input.indexOf(konamiCode) !== -1) {
                 fn();
                 input = "";
             }
@@ -44,16 +56,31 @@
 
     $(document).ready(function () {
         konami(function () {
-            alert("All flowers are dead!!");
+            alert("There is a bee!!!");
             $("body").css("background-color", "pink");
+
+            // $("h1").css("font-size", "200px").animate({
+            //     opacity: '0.3'
+            // });
 
             $("h1").css("font-size", "200px").animate({
                 opacity: '0.3'
-            });
+            },3000);
 
-            $("img").fadeOut(3000);
+            $("#flowers").fadeOut(2000);
+
+            $(document).ready(function() {
+                $("#burrito").show();
+                // $("#burrito").animate({left: "+=500"}, 2000);
+                // $("#burrito").animate({left: "-=500"}, 1000);
+                $("#burrito").animate({left: "+=500"}, 2000);
+                $("#burrito").animate({left: "-=1000"}, 1500);
+            });
+            $("#burrito").fadeOut(5000);
+
         });
     });
+    
 
     // ↑ ↑ ↓ ↓ ← → ← → b a enter
 </script>
