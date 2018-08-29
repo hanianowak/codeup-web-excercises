@@ -14,11 +14,10 @@
             text-align: center;
         }
 
-        #burrito {
+        #bee {
             display: none;
             width: 10%;
-            position: absolute;
-            top: 700px;
+            position: fixed;
         }
 
         div {
@@ -31,7 +30,7 @@
 <h1>Catch a bee!!!</h1>
 <div>
     <img src="img/flowers.jpeg" id="flowers">
-    <img src="img/bee1.png" id="burrito">
+    <img src="img/bee1.png" id="bee" class="a">
 </div>
 
 <script src="js/jquery-2.2.4.js"></script>
@@ -61,34 +60,60 @@
             alert("There is a bee!!!");
             $("body").css("background-color", "pink");
 
-            // $("h1").css("font-size", "200px").animate({
-            //     opacity: '0.3'
-            // });
-
             $("h1").css("font-size", "200px").animate({
                 opacity: '0.3'
-            }, 3000);
+            }, 1000);
 
             $("#flowers").fadeOut(2000);
-
-            $(document).ready(function () {
-                $("#burrito").show();
-
-                $("#burrito").mouseover(function () {
-                    $("#burrito").fadeOut();
-                });
-
-                $("#burrito").animate({left: "+=500"}, 2000);
-                $("#burrito").animate({left: "-=1000"}, 1500);
+            //
+            $("#bee").show();
+            //
+            $("#bee").click(function () {
+                $("#bee").fadeOut();
+                alert("You got it!");
             });
 
-            $("#burrito").fadeOut(5000);
-
+            animateBee();
         });
+
+        function makeNewPosition() {
+
+            // Get viewport dimensions (remove the dimension of the div)
+            var h = $(window).height() - 50;
+            var w = $(window).width() - 50;
+
+            var nh = Math.floor(Math.random() * h);
+            var nw = Math.floor(Math.random() * w);
+
+            return [nh, nw];
+        }
+
+        function animateBee() {
+            var newq = makeNewPosition();
+            var oldq = $('.a').offset();
+            var speed = calcSpeed([oldq.top, oldq.left], newq);
+
+            $('.a').animate({top: newq[0], left: newq[1]}, speed, function () {
+                animateBee();
+            });
+        }
+
+        function calcSpeed(prev, next) {
+
+            var x = Math.abs(prev[1] - next[1]);
+            var y = Math.abs(prev[0] - next[0]);
+
+            var greatest = x > y ? x : y;
+
+            var speedModifier = 0.3;
+
+            var speed = Math.ceil(greatest / speedModifier);
+
+            return speed;
+        }
     });
-
-
-    // ↑ ↑ ↓ ↓ ← → ← → b a enter
 </script>
 </body>
 </html>
+
+<!--↑ ↑ ↓ ↓ ← → ← → b a enter-->
