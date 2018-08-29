@@ -2,126 +2,156 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <title>National Parks</title>
     <style>
         .invisible {
             display: none;
         }
 
+        body {
+            background-color: #e9ffcf;
+        }
+
     </style>
 </head>
-<body>
+<body class="mt-5">
 
-<a href="#" id="toggler">Click to see the answers.</a>
+<div class="container text-center">
+    <div class="row">
 
-<dl>
-    <dt>
-        Who is the director of the National Park Service?
-    </dt>
-    <dd>
-        Dan Smith is the deputy director exercising the authority of director for the National Park Service.
-    </dd>
+        <div class="col-4">
+            <img src="img/arches.jpg" style="width: 100%" class="rounded mt-5">
+        </div>
 
-    <dt>
-        What government agency oversees the National Park Service?
-    </dt>
-    <dd>
-        The National Park Service is a bureau of the Department of the Interior. Directly overseeing its operation is
-        the department's Assistant Secretary for Fish, Wildlife and Parks.
-    </dd>
+        <div class="col-8">
+            <h4><a href="#" id="toggler">Click to see the answers</a></h4>
+            <hr>
+            <dl>
+                <dt>
+                    Who is the director of the National Park Service?
+                </dt>
+                <dd>
+                    Dan Smith is the deputy director exercising the authority of director for the National Park Service.
+                </dd>
 
-    <dt>
-        How many employees are in the National Park Service?
-    </dt>
-    <dd>
-        Permanent, temporary, and seasonal employees: More than 20,000
-    </dd>
+                <dt>
+                    What government agency oversees the National Park Service?
+                </dt>
+                <dd>
+                    The National Park Service is a bureau of the Department of the Interior. Directly overseeing its
+                    operation is
+                    the department's Assistant Secretary for Fish, Wildlife and Parks.
+                </dd>
 
-    <dt>
-        How many people visit the national parks?
-    </dt>
-    <dd>
-        Total recreation visitors to the national parks in 2017: 330,882,751
-    </dd>
+                <dt>
+                    How many employees are in the National Park Service?
+                </dt>
+                <dd>
+                    Permanent, temporary, and seasonal employees: More than 20,000
+                </dd>
 
-    <dt>
-        Can I bring my pet to a national park?
-    </dt>
-    <dd>
-        Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in
-        some lodging facilities.
-    </dd>
+                <dt>
+                    How many people visit the national parks?
+                </dt>
+                <dd>
+                    Total recreation visitors to the national parks in 2017: 330,882,751
+                </dd>
 
-    <dt>
-        How do I apply for a job with the National Park Service?
-    </dt>
-    <dd>
-        National Park Service jobs, including both permanent and seasonal positions, are listed on
-        USAJOBs.
-    </dd>
+                <dt>
+                    Can I bring my pet to a national park?
+                </dt>
+                <dd>
+                    Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in
+                    some lodging facilities.
+                </dd>
 
-    <dt>
-        How many areas are in the National Park System?
-    </dt>
-    <dd>
-        The system includes 417 areas covering more than 85 million acres in every state, the District
-        of Columbia,
-        American Samoa, Guam, Puerto Rico, and the Virgin Islands. These areas include national parks, monuments,
-        battlefields, military parks, historical parks, historic sites, lakeshores, seashores, recreation areas,
-        scenic rivers and trails, and the White House.
-    </dd>
+                <dt>
+                    How do I apply for a job with the National Park Service?
+                </dt>
+                <dd>
+                    National Park Service jobs, including both permanent and seasonal positions, are listed on
+                    USAJOBs.
+                </dd>
 
-    <dt>
-        What is the largest national park site? Smallest?
-    </dt>
-    <dd>
-        Largest: Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres
-    </dd>
+                <dt>
+                    How many areas are in the National Park System?
+                </dt>
+                <dd>
+                    The system includes 417 areas covering more than 85 million acres in every state, the District
+                    of Columbia,
+                    American Samoa, Guam, Puerto Rico, and the Virgin Islands. These areas include national parks,
+                    monuments,
+                    battlefields, military parks, historical parks, historic sites, lakeshores, seashores, recreation
+                    areas,
+                    scenic rivers and trails, and the White House.
+                </dd>
 
-    <dt>
-        How old is the National Park System?
-    </dt>
-    <dd>
-        The National Park Service was created by an act signed by President Woodrow Wilson on August
-        25, 1916.
-        Yellowstone National Park was established by an act signed by President Ulysses S. Grant on March 1, 1872,
-        as the nation's first national park.
-    </dd>
+                <dt>
+                    What is the largest national park site? Smallest?
+                </dt>
+                <dd>
+                    Largest: Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres
+                </dd>
 
-    <dt>
-        What is the most-visited national park?
-    </dt>
-    <dd>
-        Blue Ridge Parkway
-    </dd>
-</dl>
+                <dt>
+                    How old is the National Park System?
+                </dt>
+                <dd>
+                    The National Park Service was created by an act signed by President Woodrow Wilson on August
+                    25, 1916.
+                    Yellowstone National Park was established by an act signed by President Ulysses S. Grant on March 1,
+                    1872,
+                    as the nation's first national park.
+                </dd>
+
+                <dt>
+                    What is the most-visited national park?
+                </dt>
+                <dd>
+                    Blue Ridge Parkway
+                </dd>
+            </dl>
+        </div>
 
 
-<script src="js/jquery-2.2.4.js"></script>
-<script>
-    "use strict";
+    </div>
 
-    $(document).ready(function () {
-        $('dd').addClass("invisible");
+    <script src="js/jquery-2.2.4.js"></script>
+    <script>
+        "use strict";
 
-        $('#toggler').click(function (event) {
-            event.preventDefault();
-            $('dd').toggleClass('invisible');
+        $(document).ready(function () {
+            $('dd').addClass("invisible");
 
-            // if (number of dd elements with invisible class is zero) {
-            
-            if ($('#toggler').text() === 'Click to see the answers.') {
-                $('#toggler').text('Click to hide the answers.');
-            } else {
-                $('#toggler').text('Click to see the answers.');
-            }
+            $('#toggler').click(function (event) {
+                event.preventDefault();
+                $('dd').toggleClass('invisible');
+
+                if ($('#toggler').text() === 'Click to see the answers') {
+                    $('#toggler').text('Click to hide the answers');
+                } else {
+                    $('#toggler').text('Click to see the answers');
+                }
+            });
+
+            $("dt").on("click", function () {
+                $(this).css("background-color", "yellow");
+            });
+
+            $("img").mouseover(function () {
+                $(this).css("width", "200%");
+            });
+            $("img").mouseleave(function () {
+                $(this).css("width", "100%");
+            });
+
         });
-
-        $("dt").on("click", function () {
-            $(this).css("background-color", "yellow");
-        });
-    });
-</script>
+    </script>
 
 
 </body>
