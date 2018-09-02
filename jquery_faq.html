@@ -57,6 +57,11 @@
             background-color: yellow;
         }
 
+        h2
+        {
+            display: none;
+        }
+
 
     </style>
 
@@ -64,6 +69,18 @@
 <body class="mt-5">
 
 <div class="container">
+
+    <!--At the top of the page, add a div with two elements, an h1 that reads "Would you like to sign up for our newsletter?"
+    and a span that has an 'x' in it. When the 'x' is clicked, hide the entire div element.-->
+
+    <div id="newsletter">
+        <h1>Would you like to sign up for our newsletter?</h1>
+        <span id="closing">x</span>
+    </div>
+
+    <h2>Would you like to register for our site?</h2>
+
+
     <div class="row">
 
         <div class="col-4">
@@ -293,6 +310,12 @@
         $("#swap3").click(function () {
             $("#frame3").toggleClass("imgPark1");
         });
+
+        $("#closing").click(function () {
+            $("#newsletter").hide();
+        })
+
+        $("h2").delay(8000).fadeIn(8000);
 
 
     })
