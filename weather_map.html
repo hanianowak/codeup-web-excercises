@@ -20,10 +20,9 @@
             background-color: whitesmoke;
             border: 1px solid #a5a5a5;
             border-radius: 10px;
-        }
-        #form1 {
             padding: 10px;
         }
+        
     </style>
 </head>
 <body>
@@ -59,16 +58,17 @@
     <div class="row">
         <hr>
         <div class="container col-3" id="form1">
-            <form>
+            <form id="myForm">
                 <div class="form-group">
-                    <label for="lat">Latitude:</label>
-                    <input type="text" class="form-control" id="lat">
+                    <label for="latC">Latitude:</label>
+                    <input type="text" class="form-control" id="latC">
                 </div>
                 <div class="form-group">
-                    <label for="lon">Longitude:</label>
-                    <input type="text" class="form-control" id="lon">
+                    <label for="lonC">Longitude:</label>
+                    <input type="text" class="form-control" id="lonC">
                 </div>
-                <button type="button" class="btn btn-outline-success btn-block">show forecast for this place</button>
+                <!--<button type="button" class="btn btn-outline-success btn-block" id="customLL">show forecast for this place</button>-->
+                <input type="button" value="forecast for this location" id="showMe">
             </form>
         </div>
         <hr>
@@ -93,8 +93,13 @@
 
 <script>
     "use strict";
-    (function () {
 
+    // function myFunction() {
+    //     document.getElementById("myForm").submit();
+    // }
+
+
+    (function () {
         // Set our map options
         var mapOptions = {
             // Set the zoom level
@@ -113,7 +118,11 @@
         //getting weather info
         $.get("http://api.openweathermap.org/data/2.5/weather", {
             APPID: "6472785330d2ffb6f601bd80281f6a3c",
-            q: "San Antonio, US",
+            // q: "San Antonio, US",
+            lat:    29.423017,
+            lon:   -98.48527,
+            // lat: document.getElementById('latC').value,
+            // lon: document.getElementById('lonC').value,
             units: "imperial"
         }).done(function (data) {
             console.log(data);
@@ -134,7 +143,8 @@
         //FORECAST
         $.get("http://api.openweathermap.org/data/2.5/forecast", {
             APPID: "6472785330d2ffb6f601bd80281f6a3c",
-            q: "San Antonio, US",
+            lat:    29.423017,
+            lon:   -98.48527,
             units: "imperial"
         }).done(function (data) {
             console.log(data);
@@ -246,6 +256,164 @@
             //
             $("#day3").append(condition3);
 
+
+
+
+
+            // ---------------------------- using lat and lon put into the from
+            //taking custom location
+            $("#showMe").click(function () {
+                var customLat = $('#latC').val();
+                var customLon = $('#lonC').val();
+                console.log(customLat);
+                console.log(customLon);
+                $("#day1").empty();
+                $("#day2").empty();
+                $("#day3").empty();
+
+                $.get("http://api.openweathermap.org/data/2.5/weather", {
+                    APPID: "6472785330d2ffb6f601bd80281f6a3c",
+                    // q: "San Antonio, US",
+                    lat: customLat,
+                    lon: customLon,
+                    units: "imperial"
+                }).done(function (data) {
+                    console.log(data);
+
+                    var condition = "<div>";
+                    condition += Math.round(data.main.temp_max) + "/" + Math.round(data.main.temp_min) + "<br>";
+                    // condition += "<img src=http://openweathermap.org/img/w/[data.list.weather[0].icon].png>" + "<br>";
+                    condition += "clouds: " + data.weather[0].description + "<br>";
+                    condition += "humidity: " + data.main.humidity + "<br>";
+                    condition += "wind: " + Math.round(data.wind.speed) + "<br>";
+                    condition += "pressure : " + data.main.pressure + "<br>";
+                    //
+                    $("#day1").append(condition);
+                });
+
+
+
+                 /////////
+                //custom location day2
+                $.get("http://api.openweathermap.org/data/2.5/forecast", {
+                    APPID: "6472785330d2ffb6f601bd80281f6a3c",
+                    lat:    customLat,
+                    lon:    customLon,
+                    units: "imperial"
+                }).done(function (data) {
+                    console.log(data);
+
+                    var now = new Date();
+                    var tomorrow = new Date(now.getTime() + 1000 * 60 * 60 * 24);
+                    var tomorrowstart = new Date(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate());
+                    var tomorrowend = new Date(tomorrowstart.getTime() + 1000 * 60 * 60 * 24);
+
+                    console.log(now);
+                    console.log(tomorrowstart);
+
+                    var secondDayData = [];
+                    //getting forecast only for the next day - putting info into array
+                    for (var i = 0; i < data.list.length; i++) {
+                        var dayForecast = data.list[i];
+                        var dayForecastTimestamp = dayForecast.dt * 1000;
+
+                        if (dayForecastTimestamp >= tomorrowstart.getTime() && dayForecastTimestamp < tomorrowend.getTime()) {
+                            secondDayData.push(dayForecast);
+                        }
+                    }
+                    console.log(secondDayData);
+
+                    //getting forecast elements for the nex day
+                    var temperaturesMax = [];
+                    var temperaturesMin = [];
+                    var clouds = [];
+                    var humidity = [];
+                    var winds = [];
+                    var pressures = [];
+
+                    secondDayData.forEach(function (dayForecast) {
+                        temperaturesMax.push(dayForecast.main.temp_max);
+                        temperaturesMin.push(dayForecast.main.temp_min);
+                        clouds.push(dayForecast.weather[0].description);
+                        humidity.push(dayForecast.main.humidity);
+                        winds.push(dayForecast.wind.speed);
+                        pressures.push(dayForecast.main.pressure);
+
+                    });
+
+                    var max = Math.max(...temperaturesMax);
+                    var min = Math.min(...temperaturesMax);
+                    var maxHumidity = Math.max(...humidity);
+                    var maxWind = Math.max(...winds);
+                    var maxPressure = Math.max(...pressures);
+
+
+                    //putting forecast for the next day
+                    var condition = "<div class='text-center'>";
+                    condition += Math.round(max) + "/" + Math.round(min) + "<br>";
+                    // condition += "<img src=http://openweathermap.org/img/w/[data.list.weather[0].icon].png>" + "<br>";
+                    condition += "clouds: " + clouds[0] + "<br>";
+                    condition += "humidity: " + maxHumidity + "<br>";
+                    condition += "wind: " + Math.round(maxWind) + "<br>";
+                    condition += "pressure : " + maxPressure + "<br>";
+                    //
+                    $("#day2").append(condition);
+
+
+
+
+                    /////////
+                    //custom location day3
+                    var day3rd = new Date(now.getTime() + 1000 * 60 * 60 * 24 * 2);
+                    var day3rdStart = new Date(day3rd.getFullYear(), day3rd.getMonth(), day3rd.getDate());
+                    var day3End = new Date(day3rdStart.getTime() + 1000 * 60 * 60 * 24);
+
+                    var thirdDayData = [];
+                    //getting forecast only for the third day - putting info into array
+                    for (var i = 0; i < data.list.length; i++) {
+                        var day3Forecast = data.list[i];
+                        var day3ForecastTimestamp = day3Forecast.dt * 1000;
+
+                        if (day3ForecastTimestamp >= day3rdStart.getTime() && day3ForecastTimestamp < day3End.getTime()) {
+                            thirdDayData.push(day3Forecast);
+                        }
+                    }
+                    console.log(thirdDayData);
+
+                    var temperaturesMax3 = [];
+                    var temperaturesMin3 = [];
+                    var clouds3 = [];
+                    var humidity3 = [];
+                    var winds3 = [];
+                    var pressures3 = [];
+
+                    thirdDayData.forEach(function (day3Forecast) {
+                        temperaturesMax3.push(day3Forecast.main.temp_max);
+                        temperaturesMin3.push(day3Forecast.main.temp_min);
+                        clouds3.push(day3Forecast.weather[0].description);
+                        humidity3.push(day3Forecast.main.humidity);
+                        winds3.push(day3Forecast.wind.speed);
+                        pressures3.push(day3Forecast.main.pressure);
+                    });
+
+                    var max3 = Math.max(...temperaturesMax3);
+                    var min3 = Math.min(...temperaturesMax3);
+                    var maxHumidity3 = Math.max(...humidity3);
+                    var maxWind3 = Math.max(...winds3);
+                    var maxPressure3 = Math.max(...pressures3);
+
+                    //putting forecast for the third day
+                    var condition3 = "<div class='text-center'>";
+                    condition3 += Math.round(max3) + "/" + Math.round(min3) + "<br>";
+                    // condition3 += "<img src=http://openweathermap.org/img/w/[data.list.weather[0].icon].png>" + "<br>";
+                    condition3 += "clouds: " + clouds3[0] + "<br>";
+                    condition3 += "humidity: " + maxHumidity3 + "<br>";
+                    condition3 += "wind: " + Math.round(maxWind3) + "<br>";
+                    condition3 += "pressure : " + maxPressure3 + "<br>";
+                    //
+                    $("#day3").append(condition3);
+                })
+            });
         });
     })();
 </script>
