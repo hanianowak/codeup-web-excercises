@@ -46,7 +46,7 @@
 
         </div>
         <div class="col-4 days" id="day3">
-            
+
         </div>
     </div>
     <div class="row">
@@ -98,8 +98,8 @@
             // showing current condition for San Antonio
             var condition = "<div>";
             condition += Math.round(data.main.temp_max) + "/" + Math.round(data.main.temp_min) + "<br>";
-            condition += "<img src=http://openweathermap.org/img/w/[data.list.weather[0].icon].png>" + "<br>";
-            condition += "clouds: " + data.clouds.all + "<br>";
+            // condition += "<img src=http://openweathermap.org/img/w/[data.list.weather[0].icon].png>" + "<br>";
+            condition += "clouds: " + data.weather[0].description + "<br>";
             condition += "humidity: " + data.main.humidity + "<br>";
             condition += "wind: " + Math.round(data.wind.speed) + "<br>";
             condition += "pressure : " + data.main.pressure + "<br>";
@@ -121,20 +121,55 @@
             var tomorrowend = new Date(tomorrowstart.getTime() + 1000 * 60 * 60 * 24);
 
             console.log(now);
-            console.log(typeof(tomorrowend));
             console.log(tomorrowstart);
 
             var secondDayData = [];
-
-
+            //getting forecast only for the next day - putting info into array
             for (var i = 0; i < data.list.length; i++) {
-                if ((data.list[i].dt_txt.substring(-9)) === (tomorrow.substring(-9))) {
-                    secondDayData.push(data.list(i));
+                var dayForecast = data.list[i];
+                var dayForecastTimestamp = dayForecast.dt * 1000;
+
+                if (dayForecastTimestamp >= tomorrowstart.getTime() && dayForecastTimestamp < tomorrowend.getTime()) {
+                    secondDayData.push(dayForecast);
                 }
             }
-
             console.log(secondDayData);
 
+            //getting forecast elements for the nex day
+            var temperaturesMax = [];
+            var temperaturesMin = [];
+            var clouds = [];
+            var humidity = [];
+            var winds = [];
+            var pressures = [];
+
+            secondDayData.forEach(function (dayForecast) {
+                temperaturesMax.push(dayForecast.main.temp_max);
+                temperaturesMin.push(dayForecast.main.temp_min);
+                clouds.push(dayForecast.weather[0].description);
+                humidity.push(dayForecast.main.humidity);
+                winds.push(dayForecast.wind.speed);
+                pressures.push(dayForecast.main.pressure);
+
+            });
+
+            var max = Math.max(...temperaturesMax);
+            var min = Math.min(...temperaturesMax);
+            var maxHumidity = Math.max(...humidity);
+            var maxWind = Math.max(...winds);
+            var maxPressure = Math.max(...pressures);
+
+
+            //putting forecast for the next day
+            var condition = "<div class='text-center'>";
+            condition += Math.round(max) + "/" + Math.round(min) + "<br>";
+            // condition += "<img src=http://openweathermap.org/img/w/[data.list.weather[0].icon].png>" + "<br>";
+            condition += "clouds: " + clouds[0] + "<br>";
+            condition += "humidity: " + maxHumidity + "<br>";
+            condition += "wind: " + Math.round(maxWind) + "<br>";
+            condition += "pressure : " + maxPressure + "<br>";
+            //
+            $("#day2").append(condition);
         });
     })();
 </script>
