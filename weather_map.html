@@ -107,7 +107,7 @@
             $("#day1").append(condition);
         });
 
-
+        //FORECAST
         $.get("http://api.openweathermap.org/data/2.5/forecast", {
             APPID: "6472785330d2ffb6f601bd80281f6a3c",
             q: "San Antonio, US",
@@ -170,6 +170,58 @@
             condition += "pressure : " + maxPressure + "<br>";
             //
             $("#day2").append(condition);
+
+
+            //DAY 3RD
+            var day3rd = new Date(now.getTime() + 1000 * 60 * 60 * 24 * 2);
+            var day3rdStart = new Date(day3rd.getFullYear(), day3rd.getMonth(), day3rd.getDate());
+            var day3End = new Date(day3rdStart.getTime() + 1000 * 60 * 60 * 24);
+
+            var thirdDayData = [];
+            //getting forecast only for the third day - putting info into array
+            for (var i = 0; i < data.list.length; i++) {
+                var day3Forecast = data.list[i];
+                var day3ForecastTimestamp = day3Forecast.dt * 1000;
+
+                if (day3ForecastTimestamp >= day3rdStart.getTime() && day3ForecastTimestamp < day3End.getTime()) {
+                    thirdDayData.push(day3Forecast);
+                }
+            }
+            console.log(thirdDayData);
+
+            var temperaturesMax3 = [];
+            var temperaturesMin3 = [];
+            var clouds3 = [];
+            var humidity3 = [];
+            var winds3 = [];
+            var pressures3 = [];
+
+            thirdDayData.forEach(function (day3Forecast) {
+                temperaturesMax3.push(day3Forecast.main.temp_max);
+                temperaturesMin3.push(day3Forecast.main.temp_min);
+                clouds3.push(day3Forecast.weather[0].description);
+                humidity3.push(day3Forecast.main.humidity);
+                winds3.push(day3Forecast.wind.speed);
+                pressures3.push(day3Forecast.main.pressure);
+            });
+
+            var max3 = Math.max(...temperaturesMax3);
+            var min3 = Math.min(...temperaturesMax3);
+            var maxHumidity3 = Math.max(...humidity3);
+            var maxWind3 = Math.max(...winds3);
+            var maxPressure3 = Math.max(...pressures3);
+
+            //putting forecast for the third day
+            var condition3 = "<div class='text-center'>";
+            condition3 += Math.round(max3) + "/" + Math.round(min3) + "<br>";
+            // condition3 += "<img src=http://openweathermap.org/img/w/[data.list.weather[0].icon].png>" + "<br>";
+            condition3 += "clouds: " + clouds3[0] + "<br>";
+            condition3 += "humidity: " + maxHumidity3 + "<br>";
+            condition3 += "wind: " + Math.round(maxWind3) + "<br>";
+            condition3 += "pressure : " + maxPressure3 + "<br>";
+            //
+            $("#day3").append(condition3);
+
         });
     })();
 </script>
