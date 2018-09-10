@@ -38,7 +38,8 @@ const users = [
 
 
 // Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.
-const language3 = users.filter(user => user.languages.length >=3);
+const language3 = users.filter(user => user.languages.length >= 3);
+// const language3 = users.filter(function(user) { return user.languages.length >=3 });
 console.log(language3);
 
 
@@ -56,27 +57,29 @@ const totalExperience = users.reduce((accumulation, user) => {
 }, 0);
 
 console.log(totalExperience);
-console.log(totalExperience/users.length);
+console.log(totalExperience / users.length);
 
 
 // Use reduce to get the longest email from the list of users.
 
+const longestEmail = users.reduce((accumulation, user) => {
+    return user.email.length > accumulation.length ? user.email : accumulation;
 
-const getTheLongestEmail = users.reduce((accumulation, user) => {
-    if (user.email.length >= accumulation) {
-        
+    // if (user.email.length > accumulation.length) {
+    //     return user.email;
+    // } else {
+    //     return accumulation;
+    // }
+}, '');
 
-    }
-}, );
-
-console.log(getTheLongestEmail);
+console.log(longestEmail);
 
 
 // Use reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
 
-const getAllNames  = users.reduce((accumulation, user) => {
-      return accumulation + user.name + " ";
-}, "");
+const getAllNames = users.reduce((accumulation, user) => {
+    return accumulation + user.name + " ";
+}, '');
 console.log(getAllNames);
 
 

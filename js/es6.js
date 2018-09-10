@@ -49,24 +49,18 @@ let emails = [];
 let names = [];
 
 // TODO: rewrite the following using arrow functions
-// users.forEach(function(user) {
-//     return emails.push(user.email);
-// });
-// users.forEach(function(user) {
-//     return names.push(user.name);
-// });
+users.forEach(user => {
+    emails.push(user.email);
+    names.push(user.name);
+});
 
-// let usersP = user => {emails.push(user.email); names.push(user.name)};
-
-for (let user of users) {
-    {
-        emails.push(user.email);
-        names.push(user.name)
-    }
-}
-
-// usersP(users);
-
+//
+// for (let user of users) {
+//     {
+//         emails.push(user.email);
+//         names.push(user.name)
+//     }
+// }
 
 // TODO: replace `var` with `let` in the following declaration
 let developers = [];
