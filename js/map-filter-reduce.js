@@ -63,13 +63,13 @@ console.log(totalExperience / users.length);
 // Use reduce to get the longest email from the list of users.
 
 const longestEmail = users.reduce((accumulation, user) => {
-    return user.email.length > accumulation.length ? user.email : accumulation;
-
-    // if (user.email.length > accumulation.length) {
-    //     return user.email;
-    // } else {
-    //     return accumulation;
-    // }
+    // return user.email.length > accumulation.length ? user.email : accumulation;
+    //or:
+    if (user.email.length > accumulation.length) {
+        return user.email;
+    } else {
+        return accumulation;
+    }
 }, '');
 
 console.log(longestEmail);
@@ -77,9 +77,28 @@ console.log(longestEmail);
 
 // Use reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
 
-const allNames = users.reduce((accumulation, user) => {
-    return accumulation + user.name + " ";
-}, '');
-console.log("your instructors: " + allNames);
+const allNames = users.reduce((accumulation, user, i) => {
+    if (i < users.length - 1) {
+        return accumulation + user.name + ", ";
+    }
+    else {
+        return accumulation + user.name + "."
+    }
+}, 'Your instructors: ');
+console.log(allNames);
+
+
+// Use reduce to get the unique list of languages from the list of users. - BONUS
+
+// const languages = users.reduce((accumulation, user) => {
+//     if (accumulation.includes(user.languages)) {
+//         return accumulation;
+//     }
+//     else {
+//         return accumulation + user.languages + ',';
+//     }
+// });
+
+// console.log(languages);
 
 
