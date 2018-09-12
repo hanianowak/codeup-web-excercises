@@ -5,21 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-<script>
-    function countToOneHundresMilion() {
-        return new Promise((resolve, reject) => {
-            for (let i = 1; i <= 100000000; i++) {
-                console.log(i);
-            }
-            resolve("counted!");
-        });
-    }
-
-    countToOneHundresMilion().then(data => {
-        console.log(data);
-    });
+<table>
+    <thead>
+    <tr>
+        <th>title</th>
+        <th>price</th>
+        <th>categories</th>
+    </tr>
+    </thead>
+</table>
 
 
-</script>
+<script src="js/promises.js"></script>
 </body>
 </html>

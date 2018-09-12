@@ -39,3 +39,32 @@ console.log(years/(dogs.length));
 
 const oldest = dogs.filter(dog => dog.age>=3);
 console.log(oldest);
+
+
+//pushups 9/11
+
+
+// dogs.forEach(function (dog) {
+//      console.log(dog.name);
+// });
+//
+// dogs.forEach(function (dog) {
+//     var sumsum = 0;
+//     sumsum += dog.age;
+// }
+// console.log(sumsum/dogs.length););
+
+
+
+
+
+
+
+
+
+
+
+
+// array1.forEach(function(element) {
+//     console.log(element);
+// });
